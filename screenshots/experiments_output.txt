@@ -1,0 +1,46 @@
+================================================================================
+  AFAS DISCRETE-EVENT CPU SCHEDULER: EXPERIMENTAL BENCHMARK SUITE
+================================================================================
+[1/5] Executing Main Workload Runs (5 Workloads x 5 Seeds x 6 Policies)...
+  Finished W1 across 5 seeds.
+  Finished W2 across 5 seeds.
+  Finished W3 across 5 seeds.
+  Finished W4 across 5 seeds.
+  Finished W5 across 5 seeds.
+  Saved raw simulation runs -> data/results_all_runs.csv (200 records)
+
+[2/5] Aggregating Summary Metrics across Workloads W1–W5...
+-------------------------------------------------------------------------------------
+Policy           | Avg WT  | Avg RT  | p95 RT  | Max Wait | Ctx Sw | Jain  | Warn 
+-------------------------------------------------------------------------------------
+FCFS             | 83.9    | 83.9    | 126.9   | 131.2    | 19.0   | 0.48  | 12.7 
+SJF              | 38.7    | 38.7    | 133.8   | 148.2    | 19.0   | 0.67  | 6.1  
+SRTF             | 30.6    | 27.0    | 129.8   | 147.8    | 22.0   | 0.81  | 4.2  
+RR (q=4)         | 70.5    | 20.3    | 37.0    | 40.8     | 57.9   | 0.83  | 12.3 
+Priority         | 66.8    | 66.8    | 148.7   | 158.7    | 19.0   | 0.57  | 8.5  
+AFAS             | 54.5    | 17.1    | 53.9    | 63.2     | 56.6   | 0.71  | 4.7  
+AFAS no-aging    | 47.8    | 24.7    | 98.1    | 115.8    | 52.4   | 0.69  | 5.5  
+AFAS no-share    | 54.4    | 18.1    | 55.2    | 63.6     | 56.4   | 0.71  | 4.4  
+-------------------------------------------------------------------------------------
+
+[3/5] Executing One-at-a-Time Parameter Sensitivity Sweep...
+  Finished sweep for wp.
+  Finished sweep for wa.
+  Finished sweep for wr.
+  Finished sweep for wc.
+
+[4/5] Executing Time-Quantum Sweep (q = 1, 2, 4, 8, 16, 32)...
+  Finished quantum q=1.
+  Finished quantum q=2.
+  Finished quantum q=4.
+  Finished quantum q=8.
+  Finished quantum q=16.
+  Finished quantum q=32.
+
+[5/5] Executing Decision Runtime Scaling Benchmark...
+  Scaled N= 10 -> AFAS: 0.39 ms | RR: 0.09 ms
+  Scaled N= 50 -> AFAS: 6.40 ms | RR: 0.46 ms
+  Scaled N=100 -> AFAS: 25.06 ms | RR: 0.90 ms
+  Scaled N=500 -> AFAS: 612.90 ms | RR: 4.74 ms
+
+[COMPLETE] Successfully generated all experimental data -> data/results.json

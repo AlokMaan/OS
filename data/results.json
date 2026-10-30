@@ -1,0 +1,326 @@
+{
+  "summary": {
+    "FCFS": {
+      "avg_wt": 83.9,
+      "avg_rt": 83.9,
+      "p95_rt": 126.9,
+      "max_wait_gap": 131.2,
+      "ctx_switches": 19.0,
+      "jain_fairness": 0.48,
+      "starvation_warnings": 12.7
+    },
+    "SJF": {
+      "avg_wt": 38.7,
+      "avg_rt": 38.7,
+      "p95_rt": 133.8,
+      "max_wait_gap": 148.2,
+      "ctx_switches": 19.0,
+      "jain_fairness": 0.67,
+      "starvation_warnings": 6.1
+    },
+    "SRTF": {
+      "avg_wt": 30.6,
+      "avg_rt": 27.0,
+      "p95_rt": 129.8,
+      "max_wait_gap": 147.8,
+      "ctx_switches": 22.0,
+      "jain_fairness": 0.81,
+      "starvation_warnings": 4.2
+    },
+    "RR (q=4)": {
+      "avg_wt": 70.5,
+      "avg_rt": 20.3,
+      "p95_rt": 37.0,
+      "max_wait_gap": 40.8,
+      "ctx_switches": 57.9,
+      "jain_fairness": 0.83,
+      "starvation_warnings": 12.3
+    },
+    "Priority": {
+      "avg_wt": 66.8,
+      "avg_rt": 66.8,
+      "p95_rt": 148.7,
+      "max_wait_gap": 158.7,
+      "ctx_switches": 19.0,
+      "jain_fairness": 0.57,
+      "starvation_warnings": 8.5
+    },
+    "AFAS": {
+      "avg_wt": 54.5,
+      "avg_rt": 17.1,
+      "p95_rt": 53.9,
+      "max_wait_gap": 63.2,
+      "ctx_switches": 56.6,
+      "jain_fairness": 0.71,
+      "starvation_warnings": 4.7
+    },
+    "AFAS no-aging": {
+      "avg_wt": 47.8,
+      "avg_rt": 24.7,
+      "p95_rt": 98.1,
+      "max_wait_gap": 115.8,
+      "ctx_switches": 52.4,
+      "jain_fairness": 0.69,
+      "starvation_warnings": 5.5
+    },
+    "AFAS no-share": {
+      "avg_wt": 54.4,
+      "avg_rt": 18.1,
+      "p95_rt": 55.2,
+      "max_wait_gap": 63.6,
+      "ctx_switches": 56.4,
+      "jain_fairness": 0.71,
+      "starvation_warnings": 4.4
+    }
+  },
+  "sensitivity": {
+    "wp": {
+      "0.0": {
+        "avg_wt": 72.74,
+        "avg_rt": 15.72,
+        "max_wait_gap": 60.67
+      },
+      "0.1": {
+        "avg_wt": 68.36,
+        "avg_rt": 15.0,
+        "max_wait_gap": 67.53
+      },
+      "0.2": {
+        "avg_wt": 65.33,
+        "avg_rt": 16.94,
+        "max_wait_gap": 72.67
+      },
+      "0.3": {
+        "avg_wt": 63.96,
+        "avg_rt": 19.06,
+        "max_wait_gap": 74.07
+      },
+      "0.5": {
+        "avg_wt": 65.14,
+        "avg_rt": 21.66,
+        "max_wait_gap": 79.2
+      },
+      "0.7": {
+        "avg_wt": 67.52,
+        "avg_rt": 24.55,
+        "max_wait_gap": 87.87
+      },
+      "1.0": {
+        "avg_wt": 75.36,
+        "avg_rt": 34.82,
+        "max_wait_gap": 124.47
+      }
+    },
+    "wa": {
+      "0.0": {
+        "avg_wt": 59.28,
+        "avg_rt": 25.98,
+        "max_wait_gap": 134.4
+      },
+      "0.1": {
+        "avg_wt": 60.27,
+        "avg_rt": 19.52,
+        "max_wait_gap": 86.13
+      },
+      "0.2": {
+        "avg_wt": 61.84,
+        "avg_rt": 19.11,
+        "max_wait_gap": 79.53
+      },
+      "0.3": {
+        "avg_wt": 62.57,
+        "avg_rt": 18.93,
+        "max_wait_gap": 76.27
+      },
+      "0.5": {
+        "avg_wt": 66.29,
+        "avg_rt": 18.16,
+        "max_wait_gap": 72.93
+      },
+      "0.7": {
+        "avg_wt": 71.38,
+        "avg_rt": 17.33,
+        "max_wait_gap": 68.47
+      },
+      "1.0": {
+        "avg_wt": 75.94,
+        "avg_rt": 18.56,
+        "max_wait_gap": 64.4
+      }
+    },
+    "wr": {
+      "0.0": {
+        "avg_wt": 73.66,
+        "avg_rt": 21.55,
+        "max_wait_gap": 78.8
+      },
+      "0.1": {
+        "avg_wt": 66.46,
+        "avg_rt": 20.24,
+        "max_wait_gap": 75.53
+      },
+      "0.2": {
+        "avg_wt": 62.16,
+        "avg_rt": 18.18,
+        "max_wait_gap": 73.6
+      },
+      "0.3": {
+        "avg_wt": 59.76,
+        "avg_rt": 16.85,
+        "max_wait_gap": 76.13
+      },
+      "0.5": {
+        "avg_wt": 58.76,
+        "avg_rt": 16.57,
+        "max_wait_gap": 77.73
+      },
+      "0.7": {
+        "avg_wt": 58.67,
+        "avg_rt": 16.55,
+        "max_wait_gap": 78.07
+      },
+      "1.0": {
+        "avg_wt": 58.67,
+        "avg_rt": 16.55,
+        "max_wait_gap": 78.07
+      }
+    },
+    "wc": {
+      "0.0": {
+        "avg_wt": 64.04,
+        "avg_rt": 20.47,
+        "max_wait_gap": 74.53
+      },
+      "0.1": {
+        "avg_wt": 63.9,
+        "avg_rt": 19.19,
+        "max_wait_gap": 74.0
+      },
+      "0.2": {
+        "avg_wt": 63.88,
+        "avg_rt": 18.82,
+        "max_wait_gap": 73.73
+      },
+      "0.3": {
+        "avg_wt": 63.74,
+        "avg_rt": 18.37,
+        "max_wait_gap": 74.27
+      },
+      "0.5": {
+        "avg_wt": 63.63,
+        "avg_rt": 17.4,
+        "max_wait_gap": 75.2
+      },
+      "0.7": {
+        "avg_wt": 63.19,
+        "avg_rt": 16.9,
+        "max_wait_gap": 74.73
+      },
+      "1.0": {
+        "avg_wt": 63.58,
+        "avg_rt": 16.26,
+        "max_wait_gap": 75.53
+      }
+    }
+  },
+  "quantum_sweep": {
+    "RR": {
+      "1": {
+        "ctx_switches": 195.7,
+        "avg_rt": 5.3,
+        "max_wait_gap": 11.8
+      },
+      "2": {
+        "ctx_switches": 103.0,
+        "avg_rt": 10.7,
+        "max_wait_gap": 22.5
+      },
+      "4": {
+        "ctx_switches": 57.9,
+        "avg_rt": 20.3,
+        "max_wait_gap": 40.8
+      },
+      "8": {
+        "ctx_switches": 34.2,
+        "avg_rt": 34.4,
+        "max_wait_gap": 64.1
+      },
+      "16": {
+        "ctx_switches": 24.3,
+        "avg_rt": 49.5,
+        "max_wait_gap": 85.1
+      },
+      "32": {
+        "ctx_switches": 21.0,
+        "avg_rt": 64.8,
+        "max_wait_gap": 107.4
+      }
+    },
+    "AFAS": {
+      "1": {
+        "ctx_switches": 177.4,
+        "avg_rt": 6.6,
+        "max_wait_gap": 36.3
+      },
+      "2": {
+        "ctx_switches": 98.0,
+        "avg_rt": 10.8,
+        "max_wait_gap": 49.9
+      },
+      "4": {
+        "ctx_switches": 56.6,
+        "avg_rt": 17.1,
+        "max_wait_gap": 63.2
+      },
+      "8": {
+        "ctx_switches": 34.1,
+        "avg_rt": 26.6,
+        "max_wait_gap": 92.2
+      },
+      "16": {
+        "ctx_switches": 24.3,
+        "avg_rt": 37.6,
+        "max_wait_gap": 118.0
+      },
+      "32": {
+        "ctx_switches": 21.0,
+        "avg_rt": 48.9,
+        "max_wait_gap": 144.5
+      }
+    }
+  },
+  "scaling": {
+    "10": {
+      "FCFS": 0.07,
+      "RR": 0.08,
+      "SJF": 0.07,
+      "Priority": 0.08,
+      "SRTF": 0.1,
+      "AFAS": 0.39
+    },
+    "50": {
+      "FCFS": 0.38,
+      "RR": 0.44,
+      "SJF": 0.67,
+      "Priority": 0.76,
+      "SRTF": 0.93,
+      "AFAS": 6.59
+    },
+    "100": {
+      "FCFS": 0.89,
+      "RR": 0.9,
+      "SJF": 2.17,
+      "Priority": 2.54,
+      "SRTF": 2.74,
+      "AFAS": 25.06
+    },
+    "500": {
+      "FCFS": 8.57,
+      "RR": 4.65,
+      "SJF": 49.78,
+      "Priority": 56.38,
+      "SRTF": 58.46,
+      "AFAS": 613.91
+    }
+  }
+}

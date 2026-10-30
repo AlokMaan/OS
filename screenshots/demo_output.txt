@@ -1,0 +1,83 @@
+t=  0 | Chosen: P5   | Scores: P=0.060, A=0.000, R=0.030, -C=-0.000 => Total=0.090 | DISPATCH P5 (slice 4)
+t=  4 | Chosen: P1   | Scores: P=0.060, A=0.008, R=0.030, -C=-0.000 => Total=0.098 | DISPATCH P1 (slice 4)
+t=  8 | Chosen: P7   | Scores: P=0.270, A=0.024, R=0.150, -C=-0.000 => Total=0.444 | DISPATCH P7 (slice 4)
+t= 12 | Chosen: P8   | Scores: P=0.300, A=0.016, R=0.150, -C=-0.000 => Total=0.466 | DISPATCH P8 (slice 4)
+t= 16 | Chosen: P7   | Scores: P=0.270, A=0.032, R=0.150, -C=-0.014 => Total=0.438 | DISPATCH P7 (slice 4)
+t= 20 | Chosen: P8   | Scores: P=0.300, A=0.032, R=0.150, -C=-0.014 => Total=0.468 | DISPATCH P8 (slice 2)
+t= 22 | Chosen: P10  | Scores: P=0.270, A=0.024, R=0.150, -C=-0.000 => Total=0.444 | DISPATCH P10 (slice 4)
+t= 26 | Chosen: P9   | Scores: P=0.240, A=0.080, R=0.150, -C=-0.000 => Total=0.470 | DISPATCH P9 (slice 4)
+t= 30 | Chosen: P7   | Scores: P=0.270, A=0.080, R=0.150, -C=-0.024 => Total=0.476 | DISPATCH P7 (slice 1)
+t= 31 | Chosen: P11  | Scores: P=0.270, A=0.048, R=0.150, -C=-0.000 => Total=0.468 | DISPATCH P11 (slice 4)
+t= 35 | Chosen: P12  | Scores: P=0.300, A=0.048, R=0.150, -C=-0.000 => Total=0.498 | DISPATCH P12 (slice 4)
+t= 39 | Chosen: P10  | Scores: P=0.270, A=0.104, R=0.150, -C=-0.012 => Total=0.512 | DISPATCH P10 (slice 1)
+t= 40 | Chosen: P13  | Scores: P=0.300, A=0.032, R=0.150, -C=-0.000 => Total=0.482 | DISPATCH P13 (slice 4)
+t= 44 | Chosen: P9   | Scores: P=0.240, A=0.112, R=0.150, -C=-0.012 => Total=0.490 | DISPATCH P9 (slice 4)
+t= 48 | Chosen: P11  | Scores: P=0.270, A=0.104, R=0.150, -C=-0.012 => Total=0.512 | DISPATCH P11 (slice 2)
+t= 50 | Chosen: P12  | Scores: P=0.300, A=0.088, R=0.150, -C=-0.012 => Total=0.526 | DISPATCH P12 (slice 4)
+t= 54 | Chosen: P13  | Scores: P=0.300, A=0.080, R=0.150, -C=-0.013 => Total=0.517 | DISPATCH P13 (slice 1)
+t= 55 | Chosen: P14  | Scores: P=0.240, A=0.120, R=0.150, -C=-0.000 => Total=0.510 | DISPATCH P14 (slice 4)
+t= 59 | Chosen: P15  | Scores: P=0.270, A=0.112, R=0.150, -C=-0.000 => Total=0.532 | DISPATCH P15 (slice 4)
+t= 63 | Chosen: P16  | Scores: P=0.270, A=0.112, R=0.150, -C=-0.000 => Total=0.532 | DISPATCH P16 (slice 4)
+t= 67 | Chosen: P12  | Scores: P=0.300, A=0.104, R=0.150, -C=-0.022 => Total=0.532 | DISPATCH P12 (slice 1)
+t= 68 | Chosen: P18  | Scores: P=0.300, A=0.072, R=0.150, -C=-0.000 => Total=0.522 | DISPATCH P18 (slice 4)
+t= 72 | Chosen: P17  | Scores: P=0.270, A=0.128, R=0.150, -C=-0.000 => Total=0.548 | DISPATCH P17 (slice 4)
+t= 76 | Chosen: P19  | Scores: P=0.270, A=0.096, R=0.150, -C=-0.000 => Total=0.516 | DISPATCH P19 (slice 4)
+t= 80 | Chosen: P14  | Scores: P=0.240, A=0.168, R=0.150, -C=-0.010 => Total=0.548 | DISPATCH P14 (slice 1)
+t= 81 | Chosen: P15  | Scores: P=0.270, A=0.144, R=0.150, -C=-0.011 => Total=0.553 | DISPATCH P15 (slice 2)
+t= 83 | Chosen: P16  | Scores: P=0.270, A=0.128, R=0.150, -C=-0.011 => Total=0.537 | DISPATCH P16 (slice 1)
+t= 84 | Chosen: P20  | Scores: P=0.270, A=0.120, R=0.150, -C=-0.000 => Total=0.540 | DISPATCH P20 (slice 4)
+t= 88 | Chosen: P18  | Scores: P=0.300, A=0.128, R=0.150, -C=-0.011 => Total=0.567 | DISPATCH P18 (slice 1)
+t= 89 | Chosen: P21  | Scores: P=0.270, A=0.104, R=0.150, -C=-0.000 => Total=0.524 | DISPATCH P21 (slice 4)
+t= 93 | Chosen: P17  | Scores: P=0.270, A=0.136, R=0.150, -C=-0.011 => Total=0.545 | DISPATCH P17 (slice 3)
+t= 96 | Chosen: P22  | Scores: P=0.270, A=0.120, R=0.150, -C=-0.000 => Total=0.540 | DISPATCH P22 (slice 4)
+t=100 | Chosen: P19  | Scores: P=0.270, A=0.160, R=0.150, -C=-0.011 => Total=0.569 | DISPATCH P19 (slice 3)
+t=103 | Chosen: P23  | Scores: P=0.300, A=0.136, R=0.150, -C=-0.000 => Total=0.586 | DISPATCH P23 (slice 4)
+t=107 | Chosen: P24  | Scores: P=0.270, A=0.144, R=0.150, -C=-0.000 => Total=0.564 | DISPATCH P24 (slice 4)
+t=111 | Chosen: P20  | Scores: P=0.270, A=0.184, R=0.150, -C=-0.010 => Total=0.594 | DISPATCH P20 (slice 4)
+t=115 | Chosen: P21  | Scores: P=0.270, A=0.176, R=0.150, -C=-0.010 => Total=0.586 | DISPATCH P21 (slice 2)
+t=117 | Chosen: P22  | Scores: P=0.270, A=0.136, R=0.150, -C=-0.011 => Total=0.545 | DISPATCH P22 (slice 4)
+t=121 | Chosen: P23  | Scores: P=0.300, A=0.112, R=0.150, -C=-0.012 => Total=0.550 | DISPATCH P23 (slice 2)
+t=123 | Chosen: P24  | Scores: P=0.270, A=0.096, R=0.150, -C=-0.012 => Total=0.504 | DISPATCH P24 (slice 4)
+t=127 | Chosen: P20  | Scores: P=0.270, A=0.096, R=0.150, -C=-0.020 => Total=0.496 | DISPATCH P20 (slice 1)
+t=128 | Chosen: P3   | Scores: P=0.060, A=0.400, R=0.030, -C=-0.000 => Total=0.490 | DISPATCH P3 (slice 4) [AGING_PROMOTION]
+t=132 | Chosen: P5   | Scores: P=0.060, A=0.400, R=0.030, -C=-0.002 => Total=0.488 | DISPATCH P5 (slice 4) [AGING_PROMOTION]
+t=136 | Chosen: P1   | Scores: P=0.060, A=0.400, R=0.030, -C=-0.002 => Total=0.488 | DISPATCH P1 (slice 4) [AGING_PROMOTION]
+t=140 | Chosen: P4   | Scores: P=0.030, A=0.400, R=0.030, -C=-0.000 => Total=0.460 | DISPATCH P4 (slice 4) [AGING_PROMOTION]
+t=144 | Chosen: P6   | Scores: P=0.030, A=0.400, R=0.030, -C=-0.000 => Total=0.460 | DISPATCH P6 (slice 4) [AGING_PROMOTION]
+t=148 | Chosen: P2   | Scores: P=0.030, A=0.400, R=0.030, -C=-0.000 => Total=0.460 | DISPATCH P2 (slice 4) [AGING_PROMOTION]
+t=152 | Chosen: P3   | Scores: P=0.060, A=0.160, R=0.030, -C=-0.011 => Total=0.239 | DISPATCH P3 (slice 4)
+t=156 | Chosen: P5   | Scores: P=0.060, A=0.160, R=0.030, -C=-0.012 => Total=0.238 | DISPATCH P5 (slice 4)
+t=160 | Chosen: P1   | Scores: P=0.060, A=0.160, R=0.030, -C=-0.012 => Total=0.238 | DISPATCH P1 (slice 4)
+t=164 | Chosen: P4   | Scores: P=0.030, A=0.160, R=0.030, -C=-0.011 => Total=0.209 | DISPATCH P4 (slice 4)
+t=168 | Chosen: P6   | Scores: P=0.030, A=0.160, R=0.030, -C=-0.011 => Total=0.209 | DISPATCH P6 (slice 4)
+t=172 | Chosen: P2   | Scores: P=0.030, A=0.160, R=0.030, -C=-0.011 => Total=0.209 | DISPATCH P2 (slice 4)
+t=176 | Chosen: P3   | Scores: P=0.060, A=0.160, R=0.030, -C=-0.018 => Total=0.232 | DISPATCH P3 (slice 4)
+t=180 | Chosen: P5   | Scores: P=0.060, A=0.160, R=0.030, -C=-0.019 => Total=0.231 | DISPATCH P5 (slice 4)
+t=184 | Chosen: P1   | Scores: P=0.060, A=0.160, R=0.030, -C=-0.019 => Total=0.231 | DISPATCH P1 (slice 4)
+t=188 | Chosen: P4   | Scores: P=0.030, A=0.160, R=0.030, -C=-0.018 => Total=0.202 | DISPATCH P4 (slice 4)
+t=192 | Chosen: P6   | Scores: P=0.030, A=0.160, R=0.030, -C=-0.018 => Total=0.202 | DISPATCH P6 (slice 4)
+t=196 | Chosen: P2   | Scores: P=0.030, A=0.160, R=0.030, -C=-0.018 => Total=0.202 | DISPATCH P2 (slice 4)
+t=200 | Chosen: P3   | Scores: P=0.060, A=0.160, R=0.030, -C=-0.023 => Total=0.227 | DISPATCH P3 (slice 4)
+t=204 | Chosen: P5   | Scores: P=0.060, A=0.160, R=0.030, -C=-0.024 => Total=0.226 | DISPATCH P5 (slice 1)
+t=205 | Chosen: P1   | Scores: P=0.060, A=0.136, R=0.030, -C=-0.025 => Total=0.201 | DISPATCH P1 (slice 4)
+t=209 | Chosen: P4   | Scores: P=0.030, A=0.136, R=0.030, -C=-0.025 => Total=0.171 | DISPATCH P4 (slice 1)
+t=210 | Chosen: P6   | Scores: P=0.030, A=0.112, R=0.030, -C=-0.026 => Total=0.146 | DISPATCH P6 (slice 4)
+t=214 | Chosen: P2   | Scores: P=0.030, A=0.112, R=0.030, -C=-0.026 => Total=0.146 | DISPATCH P2 (slice 4)
+t=218 | Chosen: P3   | Scores: P=0.060, A=0.112, R=0.030, -C=-0.030 => Total=0.172 | DISPATCH P3 (slice 3)
+t=221 | Chosen: P6   | Scores: P=0.030, A=0.056, R=0.030, -C=-0.036 => Total=0.080 | DISPATCH P6 (slice 4)
+t=225 | Chosen: P2   | Scores: P=0.030, A=0.056, R=0.030, -C=-0.036 => Total=0.080 | DISPATCH P2 (slice 1)
+---------------------------------------------------------
+  SIMULATION PERFORMANCE EVALUATION
+---------------------------------------------------------
+  Average Waiting Time (WT)      : 69.58
+  Average Turnaround Time (TAT)  : 79.00
+  Average Response Time (RT)     : 31.00
+  Median Response Time           : 14.0
+  95th-Percentile Response Time  : 144.0
+  Maximum Ready-Queue Wait Gap   : 144.0
+  Simulated Context Switches     : 67
+  CPU Utilization                : 100.0 %
+  Throughput (proc/time unit)    : 0.1062
+  Jain's Fairness Index          : 0.79 / 1.00
+  Starvation Warnings (>40 units): 6
+---------------------------------------------------------

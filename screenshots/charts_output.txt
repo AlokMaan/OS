@@ -1,0 +1,2 @@
+Matplotlib is building the font cache; this may take a moment.
+[INFO] Synced all 8 publication figures to -> figures
