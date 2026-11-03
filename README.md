@@ -1,195 +1,214 @@
-# Adaptive Fairness-Aware CPU Scheduling Simulator for Linux (AFAS)
-**Dynamic Priority and Starvation Prevention — Project Review 2**
+# AFAS Studio
 
-[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
-[![Tests Passing](https://img.shields.io/badge/pytest-12%20passed-brightgreen.svg)]()
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+**Interactive CPU Scheduling Simulator & Analytics Dashboard**
 
----
+A production-quality web application for simulating and analyzing the **Adaptive Fairness-Aware Scheduler (AFAS)** alongside classic scheduling algorithms (FCFS, SJF, SRTF, Round Robin, Priority).
 
-## 📌 Project Overview
-This project delivers a **user-space discrete-event CPU scheduling simulator** comparing classic textbook policies against an **Adaptive Fairness-Aware Scheduler (AFAS)**. 
+Built as part of the Operating Systems course project at **VIT Chennai**.
 
-AFAS dynamically modulates execution urgency by continuously balancing:
-1. **Base Administrative Priority ($P_i$)**
-2. **Bounded Waiting-Time Aging ($A_i(t)$)** — saturates at 50 time units to eliminate chronic starvation without inducing priority inversions
-3. **Workload Responsiveness Class ($R_i$)** — weights interactive vs batch profiles
-4. **Decayed Recent CPU-Share Penalty ($C_i(t)$)** — exponential half-life tracking ($\lambda = 40$)
+![AFAS Studio](https://img.shields.io/badge/AFAS-Studio-10b981?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMwZjE3MmEiLz48L3N2Zz4=)
 
-### Policies Implemented:
-* **FCFS:** First-Come, First-Served (non-preemptive)
-* **SJF:** Shortest Job First (non-preemptive)
-* **SRTF:** Shortest Remaining Time First (preemptive at arrivals)
-* **Round Robin:** Cyclic FIFO execution with quantum $q = 4$
-* **Priority:** Static priority dispatch without aging (starvation baseline)
-* **AFAS (Proposed):** Dynamic multi-attribute scoring with deterministic tie-breaking
+## Screenshots
 
----
+### Simulator — Process Table & Controls
+![Simulator](./screenshots-app/01-simulator.png)
 
-## 🗂️ Project Directory Structure
+### Animated Gantt Chart — Side-by-Side Policy Comparison
+![Gantt Chart](./screenshots-app/02-gantt-chart.png)
 
-```text
-afas-simulator/
-├── afas_sim.py                     # Core simulation engine, PCB, baselines, AFAS, and metrics
-├── test_sim.py                     # 12 automated pytest unit tests (analytical cases & invariants)
-├── experiments.py                  # Batch benchmark runner (200 runs across 5 workloads x 5 seeds)
-├── charts.py                       # High-resolution publication chart generator
-├── interactive_cli.py              # Interactive terminal CLI with ASCII Gantt timeline playback
-├── generate_review2_pdf.py         # Automated ReportLab script compiling Review 2 PDF
-├── Makefile                        # Unix / Linux build automation
-├── run.sh                          # Portable bash helper script
-├── requirements.txt                # Python package dependencies
-├── OS_Review_2_Adaptive_Fairness_Aware_CPU_Scheduler.pdf # Complete 15-page Review 2 PDF
-├── data/
-│   ├── results_all_runs.csv        # Raw per-quantum simulation traces (200 records)
-│   └── results.json                # Summary metrics, ablations, sensitivity, and scaling data
-├── docs/
-│   └── OS_Review_2_Adaptive_Fairness_Aware_CPU_Scheduler.pdf
-└── figures/
-    ├── fig_1_max_wait.png          # Maximum ready-queue wait gap per workload
-    ├── fig_2_p95_response.png      # 95th-percentile response time distribution
-    ├── fig_3_avg_waiting.png       # Average waiting time across baselines
-    ├── fig_4_gantt.png             # Gantt timeline comparison (Priority vs RR vs AFAS)
-    ├── fig_5_ablation.png          # Component ablation breakdown (Aging vs Share penalty)
-    ├── fig_6_sensitivity.png       # One-at-a-time parameter sensitivity sweep
-    ├── fig_7_quantum_sweep.png     # Time-quantum sensitivity (q=1 to 32)
-    └── fig_8_runtime_scaling.png   # Algorithmic decision runtime scaling (log-log)
-```
+### AFAS Decision Audit Log
+![Audit Log](./screenshots-app/03-audit-log.png)
+
+### Metrics Dashboard — Policy Comparison
+![Metrics](./screenshots-app/04-metrics.png)
+
+### Metrics — Charts & Visualizations
+![Metrics Charts](./screenshots-app/05-metrics-charts.png)
+
+### Experiments — Benchmark & Sensitivity Analysis
+![Experiments](./screenshots-app/06-experiments.png)
+
+### Algorithm Documentation (KaTeX)
+![Docs](./screenshots-app/07-docs.png)
 
 ---
 
-## 🚀 Linux Setup and Execution Instructions
+## Features
 
-### 1. Prerequisites (Ubuntu / Debian / CentOS / Fedora / Arch / macOS)
-Ensure Python 3.10 or later is installed:
+### 🖥️ Simulator
+- Editable process table with inline validation (PID, arrival, burst, priority 1–10, class)
+- 5 preset workloads (W1–W5) with selectable seeds + random generation + CSV import
+- Multi-policy selection for side-by-side comparison
+- Animated SVG Gantt chart with context-switch markers and hover tooltips
+- Step-by-step playback with Play/Pause/Step/Reset and 0.5x–8x speed control
+- Scrubbable timeline and live ready-queue visualizer
+- AFAS weight sliders with auto-normalization and time quantum control
+
+### 📋 AFAS Decision Audit Log
+- Every scheduling decision: time, PID, queue size, score decomposition (wp·P, wa·A, wr·R, −wc·C)
+- Aging promotion detection highlighted in amber
+- Stacked bar chart for score breakdown on any selected decision
+- Click-to-jump: click a row to sync the Gantt playback
+- Filterable by PID, exportable as CSV
+
+### 📊 Metrics & Comparison
+- Metric cards per policy: Avg WT, TAT, RT, Median RT, p95 RT, CPU Util, Throughput, Jain's Fairness Index
+- Comparison table with best-in-column highlighting and AFAS emphasis
+- Grouped bar charts, radar chart, and per-process detail table
+- Starvation warnings (WT > 40 units)
+
+### 🧪 Experiments
+- Benchmark runner: W1–W5 × seeds 1–5 × all 6 policies with progress bar
+- AFAS ablation study (no-aging, no-share variants)
+- Weight sensitivity curves (one-at-a-time sweep for wp, wa, wr, wc)
+- Quantum sweep (q = 1..32) comparing RR vs AFAS
+- Runtime scaling analysis (N = 10..500)
+- Export all results as JSON
+
+### 📖 Algorithm Documentation
+- AFAS formula rendered with KaTeX
+- Component definitions, weight parameters, tie-breaking rule
+- Pseudocode, usage guide, comparison policy descriptions
+- Post-run invariant explanations
+
+### 🎨 Design
+- Dark/light theme with persistent toggle
+- Inter + JetBrains Mono typography
+- Tailwind CSS + shadcn/ui component library
+- Framer Motion animations
+- Fully responsive (desktop, tablet, mobile)
+
+## Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Framework | React 18 + TypeScript |
+| Build | Vite 5 |
+| Styling | Tailwind CSS 3 + shadcn/ui |
+| State | Zustand |
+| Charts | Recharts |
+| Math | KaTeX |
+| Animation | Framer Motion |
+| Icons | Lucide React |
+| Testing | Vitest |
+
+## Quick Start
+
 ```bash
-# Ubuntu / Debian:
-sudo apt update && sudo apt install -y python3 python3-pip python3-venv
+# Install dependencies
+npm install
 
-# Fedora / RedHat:
-sudo dnf install -y python3 python3-pip
+# Start development server
+npm run dev
 
-# Arch Linux:
-sudo pacman -S python python-pip
+# Run tests (60 tests including hand-solved cases)
+npm run test
+
+# Production build
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
-### 2. Environment Setup
-You can use `make`, the helper script `./run.sh`, or standard `pip`:
+## Project Structure
+
+```
+├── src/
+│   ├── engine/           # Pure scheduling engine (no UI deps)
+│   │   ├── types.ts      # All TypeScript types and constants
+│   │   ├── prng.ts       # Mulberry32 seeded PRNG
+│   │   ├── scheduler.ts  # FCFS, SJF, SRTF, RR, Priority, AFAS
+│   │   ├── metrics.ts    # Metric computation (Jain's, p95, etc.)
+│   │   ├── invariants.ts # Post-run correctness checks
+│   │   └── workloads.ts  # Preset workload generators
+│   ├── store/store.ts    # Zustand global state
+│   ├── components/
+│   │   ├── ui/           # shadcn-style UI primitives
+│   │   ├── layout/       # Sidebar, top bar, footer
+│   │   └── simulator/    # Process table, Gantt, playback, etc.
+│   ├── pages/            # 5 pages: Simulator, Audit, Metrics, Experiments, Docs
+│   ├── lib/utils.ts      # Utility functions (cn, fmt, CSV/JSON export)
+│   ├── App.tsx           # Router setup
+│   └── main.tsx          # Entry point
+├── tests/
+│   └── engine.test.ts    # 60 unit tests
+├── package.json
+├── vite.config.ts
+├── tailwind.config.js
+└── vitest.config.ts
+```
+
+## Scheduling Engine
+
+The AFAS formula:
+
+**S_i(t) = w_p · P_i + w_a · A_i(t) + w_r · R_i − w_c · C_i(t)**
+
+| Component | Formula | Description |
+|-----------|---------|-------------|
+| P_i | priority / 10 | Static priority (1–10 normalized) |
+| A_i(t) | min(1, (t − lastExit) / 50) | Aging — prevents starvation |
+| R_i | Interactive=1.0, Mixed=0.5, Batch=0.2 | Class responsiveness |
+| C_i(t) | min(1, decayedService / 40) | CPU consumption penalty (half-life 40) |
+
+**Default weights:** wp=0.30, wa=0.40, wr=0.15, wc=0.15
+
+**Tie-break:** score desc → arrival asc → PID asc
+
+### Invariants (verified after every run)
+1. **Non-overlap** — no two Gantt blocks overlap
+2. **Burst conservation** — total CPU time = declared burst per process
+3. **No pre-arrival execution** — no process runs before arrival
+
+## Tests
+
+60 unit tests including hand-solved cases:
+
+| Test Case | Expected |
+|-----------|----------|
+| FCFS completion times | [5, 8, 16, 22], mean WT = 5.75 |
+| SJF completion times | [5, 8, 22, 14], mean WT = 5.25 |
+| SRTF completion times | [8, 4, 22, 14], mean WT = 5.00 |
+| RR (q=2) completion times | [9, 8, 5] |
+| All 6 policies × 5 workloads | All invariants pass |
+| Determinism | Same seed → same results |
+
+## Deployment
+
+### GitHub Pages
+
 ```bash
-# Using helper script:
-./run.sh setup
-
-# OR using standard commands:
-python3 -m venv .venv
-source .venv/bin/activate
-pip install --upgrade pip
-pip install -r requirements.txt
+npm run build
+# Deploy the dist/ folder
 ```
 
----
+Set `base: '/your-repo-name/'` in `vite.config.ts` if deploying to a subpath.
 
-## 🧪 Step-by-Step Command Guide
+### Vercel
 
-### Step A: Run Automated Unit Tests (12/12 Passing)
-Verifies analytical hand-solved textbook cases, engine invariants, and boundary conditions:
 ```bash
-# Using pytest directly:
-pytest -v test_sim.py
+# Install Vercel CLI
+npm i -g vercel
 
-# Or via Makefile:
-make test
-```
-**Expected Output:**
-```text
-test_sim.py::test_fcfs_hand_solved PASSED                                [  8%]
-test_sim.py::test_sjf_hand_solved PASSED                                 [ 16%]
-test_sim.py::test_srtf_hand_solved PASSED                                [ 25%]
-test_sim.py::test_round_robin_hand_solved PASSED                         [ 33%]
-test_sim.py::test_priority_hand_solved PASSED                            [ 41%]
-test_sim.py::test_idle_gap_handling PASSED                               [ 50%]
-test_sim.py::test_engine_invariants_all_workloads PASSED                 [ 58%]
-test_sim.py::test_deterministic_reproducibility PASSED                   [ 66%]
-test_sim.py::test_afas_tie_breaking_order PASSED                         [ 75%]
-test_sim.py::test_input_validation_rejections PASSED                     [ 83%]
-test_sim.py::test_aging_bounds_and_saturation PASSED                     [ 91%]
-test_sim.py::test_afas_starvation_mitigation PASSED                      [100%]
-============================== 12 passed in 0.08s ==============================
+# Deploy
+vercel
 ```
 
----
+No configuration needed — Vite projects are auto-detected.
 
-### Step B: Run Full Batch Benchmark Suite (200 Simulation Runs)
-Executes all 5 synthetic workload families across 5 fixed seeds, ablations, parameter sweeps, and scaling benchmarks:
-```bash
-python3 experiments.py
-# Or:
-make experiments
-```
-* Generates `data/results_all_runs.csv` (complete audit trace).
-* Generates `data/results.json` (aggregated summary and ablation statistics).
+## Team
 
----
+| Name | Registration |
+|------|-------------|
+| Alok Maan | 24BCB0057 |
+| Arshdeep Singh | 24BCE0556 |
+| Ankush Hooda | 24BCE0966 |
+| Somya Sharma | 24BCT0324 |
 
-### Step C: Interactive Scheduling Simulator (CLI + ASCII Gantt)
-Run the interactive simulator to test individual algorithms or inspect real-time score decomposition:
-```bash
-python3 interactive_cli.py
-# Or:
-make cli
-```
-To run a fast non-interactive trace demo:
-```bash
-python3 interactive_cli.py --demo
-# Or:
-make demo
-```
+**Guide:** Prof. V. Ezhil Arasi  
+**Course:** Operating Systems, VIT Chennai
 
----
+## GitHub
 
-### Step D: Re-compile All Publication Figures
-Compiles high-resolution PNG plots from simulation logs:
-```bash
-python3 charts.py
-# Or:
-make charts
-```
-
----
-
-### Step E: Re-compile Formal Review 2 PDF Document
-Compiles the complete 15-page formal academic report with embedded charts and tables:
-```bash
-python3 generate_review2_pdf.py
-# Or:
-make report
-```
-* Output file: `OS_Review_2_Adaptive_Fairness_Aware_CPU_Scheduler.pdf`
-
----
-
-## 📊 Summary of Benchmark Findings
-
-| Policy | Avg Waiting Time ($\downarrow$) | Avg Response Time ($\downarrow$) | 95th% Response ($\downarrow$) | Max Wait Gap ($\downarrow$) | Context Switches | Jain Fairness Index ($\uparrow$) | Starvation Warnings ($\downarrow$) |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **FCFS** | 79.20 | 79.20 | 122.50 | 126.80 | 19.0 | 0.50 | 12.0 |
-| **SJF** | 37.00 | 37.00 | 127.60 | 146.60 | 19.0 | 0.68 | 5.3 |
-| **SRTF** | **29.40** | 26.60 | 123.10 | 146.50 | 21.7 | **0.80** | **4.1** |
-| **Round Robin ($q=4$)** | 65.60 | 19.30 | **36.10** | **39.20** | 56.8 | 0.78 | 11.0 |
-| **Priority (No aging)** | 76.30 | 76.30 | 158.70 | 168.20 | 19.0 | 0.55 | 9.0 |
-| **AFAS (Proposed)** | **52.30** | **18.20** | **52.50** | **68.20** | **54.7** | **0.69** | **4.6** |
-
-### Key Analytical Takeaways:
-1. **Starvation Prevention:** AFAS slashes maximum ready-queue wait from **168.2 to 68.2 (59% reduction)** compared to static Priority scheduling.
-2. **Interactivity:** AFAS achieves the best average response time (**18.2 units**) across all policies while maintaining context switches on par with Round Robin (54.7 vs 56.8).
-3. **Ablation Finding:** Disabling aging ($w_a = 0$) causes maximum wait to double to **138.6 (+103%)**, confirming that the bounded aging accumulator is the primary technical lever driving fairness.
-
----
-
-## 👥 Authors and Academic Affiliation
-* **Alok Maan** (24BCB0057)
-* **Arshdeep Singh** (24BCE0556)
-* **Ankush Hooda** (24BCE0966)
-* **Somya Sharma** (24BCT0324)
-
-**Faculty Guide:** Prof. Ezhil Arasi  
-**Institution:** School of Computer Science and Engineering, Vellore Institute of Technology (VIT)
+[https://github.com/AlokMaan/OS](https://github.com/AlokMaan/OS)
